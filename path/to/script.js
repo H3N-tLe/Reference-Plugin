@@ -21,6 +21,29 @@ isJSAllowed().then((isAllowed) => {
 	// Do something with the result
 });
 
+/* 
+ * Manage remotely loaded contets (does affect this script)
+ *
+ * Doesn't require the page to be reloaded to take effect.
+ * 
+ * Remote content is disabled by default.
+ * Remote content is everthing that's not included in the HTML of the page. (e.g. images, scripts, etc.)
+ * 
+ * Because this also affects this script, we need to allow remote content
+ * to be able to fetch something (e.g. an image) from a server.
+ */
+
+// Allow remote content
+allowRemoteContent();
+
+// Disallow remote content
+disallowRemoteContent();
+
+// Ask the App if remote content is allowed (returns a Promise that resolves to a boolean)
+isRemoteContentAllowed().then((isAllowed) => {
+	// Do something with the result
+});
+
 /*
  * Tell the App that we failed to download anything
  *
