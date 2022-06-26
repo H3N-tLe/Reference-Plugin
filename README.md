@@ -61,7 +61,7 @@ A script should always call either `save()` or `fail()` at the end of its execut
 
 The object `chapterInfo` contains the following information:
 
-```JSON
+```JSON5
 {
 	"chapterName": "Chapter 1", // Name of the chapter (try to a use formtat like "Chapter <chapter number>")
 	"images": [
@@ -82,7 +82,7 @@ As you can see, images are stored in objects with the `ext` property containing 
 
 An example of an object that stores an image is:
 
-```JSON
+```JSON5
 {
 	"ext": "png",
 	"b64": "iVBORw0KGgoAAAAN...CYII=" // Base64 encoded image data
