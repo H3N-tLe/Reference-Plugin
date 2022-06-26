@@ -68,6 +68,56 @@ isViewVisible().then((isVisible) => {
 });
 
 /*
+ * Tell the App to save a chapter
+ *
+ * This will save the chapter to the App's library and stop the execution of this script.
+ * 
+ * The function takes one argument (object) that contains the chapter data.
+ * 
+ * Example object to save:
+ * {
+ *     "chapterName": "Chapter 1", // Name of the chapter (try to a formtat like "Chapter <chapter number>")
+ *     "images": [
+ *         {
+ *             "ext": "png", // The file extension of the image
+ *             "b64": "..." // base64 encoded image
+ *         },
+ *         // More of these objects
+ *     ],
+ *     "nextUrl": "https://example.com/chapter-2.html", // Optional
+ *     "series": {
+ *         "title": "Example Series", // Name of the series the chapter belongs to
+ *         "description": "This is a description of the series.", // Optional
+ *         "status": "ongoing", // "ongoing", "finished", "hiatus", "dropped", "unknown" // Optional
+ *         "cover": {
+ *             "ext": "png", // The file extension of the image
+ *             "b64": "..." // base64 encoded image
+ *         } // Optional
+ *     }
+ * }
+ * 
+ * The function may throw an error if the supplied object doesn't
+ * contain the required data.
+ * This means try/catch is an option, though it isn't recommended
+ * because the JavaScript side checks are very basic and the App
+ * has more in depth checks that don't throw an error in JavaScript
+ * and just silently fail to save the chapter.
+ * 
+ * The objects that contain images require that both the "ext" and "b64"
+ * properties are set.
+ * The "ext" property is the file extension of the image.
+ * The "b64" property is the base64 encoded image. This has to be without
+ * the "data:image/<ext>;base64," prefix and just the base64 encoded image.
+ */
+
+// Tell the App to save a chapter with the minimum data required
+save({
+	chapterName: "Chapter 1",
+	images: [],
+	series: { title: "Example Series" }
+});
+
+/*
  * Tell the App that we failed to download anything
  *
  * This stops the execution of the script and loads an empty page.
