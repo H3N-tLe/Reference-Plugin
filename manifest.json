@@ -1,0 +1,5 @@
+{
+	"manifest_version": "1",
+	"website": "https://github.com/H3N-tLe/Reference-Plugin/",
+	"www.example.com": "path/to/script.js"
+}
