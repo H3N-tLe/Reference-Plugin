@@ -90,7 +90,7 @@ doesSeriesExist("Example Series").then((exists) => {
  * 
  * Example object to save:
  * {
- *     "chapterName": "Chapter 1", // Name of the chapter (try to a formtat like "Chapter <chapter number>")
+ *     "chapterName": "Chapter 1", // Name of the chapter (try to a use formtat like "Chapter <chapter number>")
  *     "images": [
  *         {
  *             "ext": "png", // The file extension of the image
