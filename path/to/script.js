@@ -2,6 +2,26 @@
 // This script is executed at "document end" -> when the DOM is fully loaded
 
 /*
+ * Manage JavaScript on the page (doesn't affect this script)
+ * 
+ * Changes require the page to be reloaded to take effect.
+ * 
+ * JavaScript is disabled by default.
+ * Only enable JavaScript if you need the page to execute its JavaScript.
+ */
+
+// Enable JavaScript on the page
+allowJS();
+
+// Disable JavaScript on the page
+disallowJS();
+
+// Ask the App if JavaScript is enabled (returns a Promise that resolves to a boolean)
+isJSAllowed().then((isAllowed) => {
+	// Do something with the result
+});
+
+/*
  * Tell the App that we failed to download anything
  *
  * This stops the execution of the script and loads an empty page.
