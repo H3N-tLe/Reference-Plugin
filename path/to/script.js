@@ -68,6 +68,20 @@ isViewVisible().then((isVisible) => {
 });
 
 /*
+ * Check if a series is already present in the library
+ *
+ * Takes a string as argument (the series title) and
+ * returns a Promise that resolves to a boolean.
+ * 
+ * Might be useful to check if we should bother gathering info like the description.
+ */
+
+// Check if a series with the name "Example Series" exists in the library
+doesSeriesExist("Example Series").then((exists) => {
+	// Do something with the result
+});
+
+/*
  * Tell the App to save a chapter
  *
  * This will save the chapter to the App's library and stop the execution of this script.
