@@ -45,6 +45,29 @@ isRemoteContentAllowed().then((isAllowed) => {
 });
 
 /*
+ * Manage the visibility of the view that contains the page
+ *
+ * Doesn't require the page to be reloaded to take effect.
+ * 
+ * The view isn't visible by default.
+ * This does affect document.visibilityState.
+ * 
+ * Usefull for debugging or letting the user solve a captcha.
+ * The user can hide the view at any time but not show it again.
+ */
+
+// Show the view
+showView();
+
+// Hide the view
+hideView();
+
+// Ask the App if the view is visible (returns a Promise that resolves to a boolean)
+isViewVisible().then((isVisible) => {
+	// Do something with the result
+});
+
+/*
  * Tell the App that we failed to download anything
  *
  * This stops the execution of the script and loads an empty page.
