@@ -78,7 +78,7 @@ The object `chapterInfo` contains the following information:
 }
 ```
 
-As you can see, images are stored in objects with the `ext` property containing the extension of the image and the `b64` property containing the base64 encoded image data. The extension should not contain the dot and base64 data should not contain the `data:image/<ext>;base64,` prefix.
+As you can see, images are stored in objects with the `ext` property containing the extension of the image and the `b64` property containing the base64 encoded image data. While the extension should contain the dot, the base64 data should not contain the `data:image/<ext>;base64,` prefix.
 
 An example of an object that stores an image is:
 
